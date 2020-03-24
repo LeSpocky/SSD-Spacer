@@ -8,12 +8,34 @@
 use <MCAD/boxes.scad>
 use <honeycomb.scad>
 
+ata_length = 100;
+ata_width = 69;
+spacer_height = 9.5 - 7 - 0.1;
+
+inner_corner = 3;
+frame_width = 5;
+
+comb_dia = 9.5;
+comb_wall = 1.5;
+comb_plus = frame_width + 1;
+comb_off = [ 1.5, 0.7, 0 ];
+
 union() {
-    # difference() {
-        roundedBox([69, 100, 2.4], 8, true);
-        roundedBox([69-10, 100-10, 5], 3, true);
+    difference() {
+        roundedBox( [ata_width, ata_length, spacer_height],
+					inner_corner + frame_width, true );
+        roundedBox( [ata_width - frame_width * 2,
+		             ata_length - frame_width * 2,
+		             spacer_height * 2],
+					inner_corner, true);
     }
-    translate([-(69-6)/2,-(100-6)/2,-2.4/2])
-        linear_extrude(2.4)
-            honeycomb(69-6, 100-6, 10, 1.5);
+	translate( [-(ata_width - comb_plus)/2,
+				  -(ata_length - comb_plus)/2,
+				  -(spacer_height / 2)] + comb_off )
+	{
+        linear_extrude(spacer_height)
+            honeycomb( ata_width - comb_plus,
+					   ata_length - comb_plus,
+					   comb_dia, comb_wall );
+	}
 }
