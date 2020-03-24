@@ -17,4 +17,4 @@ Spacer to make a 9.5mm SSD from a 7mm SSD.
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Based on [Honeycomb library (OpenSCAD)](https://www.thingiverse.com/thing:2484395)
-by (Gael Lafond)[https://www.thingiverse.com/gaellafond/about].
+by [Gael Lafond](https://www.thingiverse.com/gaellafond/about).
