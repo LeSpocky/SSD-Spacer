@@ -1,7 +1,9 @@
 /**
  * Honeycomb library
- * License: Creative Commons - Attribution
- * Copyright: Gael Lafond 2017
+ *
+ * SPDX-License-Identifier: CC-BY-3.0
+ * SPDX-FileCopyrightText: 2017 Gael Lafond
+ *
  * URL: https://www.thingiverse.com/thing:2484395
  *
  * Inspired from:

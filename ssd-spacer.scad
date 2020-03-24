@@ -1,3 +1,10 @@
+/**
+ *	SSD-Spacer
+ *
+ *	SPDX-FileCopyrightText: Alexander Dahl <alex@netz39.de>
+ *	SPDX-License-Identifier: CC-BY-SA-4.0
+ */
+
 use <MCAD/boxes.scad>
 use <honeycomb.scad>
 
