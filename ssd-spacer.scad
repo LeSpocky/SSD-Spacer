@@ -27,22 +27,28 @@ comb_wall = 1.5;
 comb_plus = frame_width + 1;
 comb_off = [ 1.5, 0.7, 0 ];
 
-union() {
-	difference() {
-		roundedBox( [spacer_width, spacer_length, spacer_height],
-					inner_corner + frame_width, true );
-		roundedBox( [spacer_width - frame_width * 2,
-					 spacer_length - frame_width * 2,
-					 spacer_height * 2],
-					inner_corner, true);
-	}
-	translate( [-(spacer_width - comb_plus)/2,
-				  -(spacer_length - comb_plus)/2,
-				  -(spacer_height / 2)] + comb_off )
-	{
-		linear_extrude(spacer_height)
-			honeycomb( spacer_width - comb_plus,
-					   spacer_length - comb_plus,
-					   comb_dia, comb_wall );
+translate( [0, 0, spacer_height/2] )
+{
+	union() {
+		difference() {
+			roundedBox( [spacer_width, spacer_length, spacer_height],
+						inner_corner + frame_width, true );
+			roundedBox( [spacer_width - frame_width * 2,
+						 spacer_length - frame_width * 2,
+						 spacer_height * 2],
+						inner_corner, true);
+		}
+		translate( [-(spacer_width - comb_plus)/2,
+					  -(spacer_length - comb_plus)/2,
+					  -(spacer_height / 2)] + comb_off )
+		{
+			linear_extrude(spacer_height)
+				honeycomb( spacer_width - comb_plus,
+						   spacer_length - comb_plus,
+						   comb_dia, comb_wall );
+		}
 	}
 }
+
+%translate( [0, 0, -base_height/2] )
+	roundedBox( [ata_width, ata_length, base_height], 2, true );
